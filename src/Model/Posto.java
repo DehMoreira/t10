@@ -11,13 +11,13 @@ package Model;
  */
 public class Posto {
     //CNPJ, Razão Social, Nome Fantasia, Bandeira (marca da distribuidora), Endereço, Bairro, CEP e Imagem
-    private int cnpj;
-    private String razao_sozial;
-    private String nome_fantasia;
-    private Endereco end;
-    private String bandeira;
-    private String imagem;
-    private Combustivel comb;
+     int cnpj;
+     String razao_social;
+     String nome_fantasia;
+     Endereco end;
+     String bandeira;
+     String imagem;
+     Total_Combustivel comb;
 
     public int getCnpj() {
         return cnpj;
@@ -27,12 +27,12 @@ public class Posto {
         this.cnpj = cnpj;
     }
 
-    public String getRazao_sozial() {
-        return razao_sozial;
+    public String getRazao_social() {
+        return razao_social;
     }
 
-    public void setRazao_sozial(String razao_sozial) {
-        this.razao_sozial = razao_sozial;
+    public void setRazao_social(String razao_sozial) {
+        this.razao_social = razao_sozial;
     }
 
     public String getNome_fantasia() {
@@ -67,13 +67,19 @@ public class Posto {
         this.imagem = imagem;
     }
 
-    public Combustivel getComb() {
+    public Total_Combustivel getComb() {
         return comb;
     }
 
-    public void setComb(Combustivel comb) {
+    public void setComb(Total_Combustivel comb) {
         this.comb = comb;
     }
+
+    @Override
+    public String toString() {
+        return "Posto{" + "cnpj=" + cnpj + ", razao_social=" + razao_social + ", nome_fantasia=" + nome_fantasia + ", end=" + end + ", bandeira=" + bandeira + ", imagem=" + imagem + ", comb=" + comb + '}';
+    }
+    
     
 
 }

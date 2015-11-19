@@ -37,5 +37,11 @@ public class Combustivel {
     public void setPreco(float preco) {
         this.preco = preco;
     }
+
+    @Override
+    public String toString() {
+        return "Combustivel{" + "tipo=" + tipo + ", data_preco=" + data_preco + ", preco=" + preco + '}';
+    }
+    
     
 }

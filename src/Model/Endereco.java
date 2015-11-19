@@ -10,9 +10,17 @@ package Model;
  * @author debora
  */
 public class Endereco {
-    //private String endereco;
+    private String endereco;
     private String bairro;
     private int cep;
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
 
     public String getBairro() {
         return bairro;
@@ -28,6 +36,11 @@ public class Endereco {
 
     public void setCep(int cep) {
         this.cep = cep;
+    }
+
+    @Override
+    public String toString() {
+        return "Endereco{" + "endereco=" + endereco + ", bairro=" + bairro + ", cep=" + cep + '}';
     }
     
     

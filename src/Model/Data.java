@@ -19,7 +19,10 @@ public class Data {
     }
 
     public void setDia(int dia) {
-        this.dia = dia;
+        if (dia > 30)
+            System.out.println("Data invalida");
+        else
+            this.dia = dia;        
     }
 
     public int getMes() {
@@ -27,8 +30,13 @@ public class Data {
     }
 
     public void setMes(int mes) {
-        this.mes = mes;
+        if (mes > 12)
+            System.out.println("Data invalida");
+        
+        else
+            this.mes = mes;
     }
+    
 
     public int getAno() {
         return ano;
