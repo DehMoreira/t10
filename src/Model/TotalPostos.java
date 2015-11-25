@@ -44,6 +44,7 @@ public class TotalPostos {
     public String Mostra () {
       String result = "";
       for (int i = 0; i < p.size(); i++) {
+          System.out.println(i + ":");
          result += p.get(i).toString() + '\n';
       }
       return ("".equals(result)) ? ("Ainda não foi cadastrado nenhum posto!") : (result);
@@ -62,7 +63,7 @@ public class TotalPostos {
             Logger.getLogger(TotalPostos.class.getName()).log(Level.SEVERE, null, ex);
         }
         try (PrintWriter printWriter = new PrintWriter(fileWriter)) {
-            printWriter.println(posto.getCnpj() + "|" + posto.getRazao_social() + "|" + posto.getNome_fantasia() + "|" + posto.getBandeira() + "|" + posto.getImagem() + "|" + posto.getEndereco() + "|" + posto.getBairro() + "|" + posto.getCep() );
+            printWriter.println(posto.getCnpj() + "|" + posto.getRazao_social() + "|" + posto.getNome_fantasia() + "|" + posto.getBandeira() + "|" + posto.getImagem() + "|" + posto.getEndereco() + "|" + posto.getCep() + "|" + posto.getBairro() );
             printWriter.flush();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Posto cadastrado com sucesso");
@@ -77,16 +78,25 @@ public class TotalPostos {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(TotalPostos.class.getName()).log(Level.SEVERE, null, ex);
              }
+        
         while (scanner.hasNext()) {
             String cnpj = scanner.next();
+            System.out.println(cnpj);
             String razao_social = scanner.next();
+            System.out.println(razao_social);
             String nome_fantasia = scanner.next();
+            System.out.println(nome_fantasia);
             String bandeira = scanner.next();
+            System.out.println(bandeira);
             String endereco = scanner.next();
-            String bairro = scanner.next();          
-            String cep = bairro.substring(0, bairro.length() - 1);
+            System.out.println(endereco);
+            String cep = scanner.next();
+            System.out.println(cep);
+            String bairro = cep.substring(0, cep.length() - 1);
+            System.out.println(bairro);
             
-            int i = Integer.parseInt(cep);
+            //int i = Integer.parseInt(cep);
+            int i= 1;
             
             Posto posto = new Posto();
             posto.setCnpj(cnpj);
@@ -96,6 +106,8 @@ public class TotalPostos {
             posto.setEndereco(endereco);
             posto.setBairro(bairro);
             posto.setCep(i);
+            
+            Add(posto);
         }
     }
 }

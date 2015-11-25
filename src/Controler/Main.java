@@ -22,7 +22,9 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        Posto posto = new Posto();
+    TotalPostos tp = new TotalPostos();
+        
+    /*    Posto posto = new Posto();
         posto.setBairro("1");
         posto.setBandeira("1");
         posto.setCep(1);
@@ -52,7 +54,7 @@ public class Main {
         posto3.setNome_fantasia("3");
         posto3.setRazao_social("3");
         
-        TotalPostos tp = new TotalPostos();
+        
  
         tp.Add(posto);
         tp.Add(posto2);
@@ -61,6 +63,12 @@ public class Main {
         tp.SalvaArquivo(posto);
         tp.SalvaArquivo(posto2);
         tp.SalvaArquivo(posto3);
+        */
+    
+    tp.LeArquivo();
+    //tp.Mostra();
+        
+        
         
         // TODO code application logic here
     }
