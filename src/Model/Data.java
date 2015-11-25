@@ -29,7 +29,7 @@ public class Data {
         return mes;
     }
 
-    public void setMes(int mes) {
+   public void setMes(int mes) {
         if (mes > 12)
             System.out.println("Data invalida");
         
@@ -48,7 +48,7 @@ public class Data {
 
     @Override
     public String toString() {
-        return "Data: " + dia + "/" + mes + "/" + ano;
+        return dia + "_" + mes + "_" + ano;
     }
     
     

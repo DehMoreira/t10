@@ -10,20 +10,46 @@ package Model;
  * @author debora
  */
 public class Posto {
-    //CNPJ, Razão Social, Nome Fantasia, Bandeira (marca da distribuidora), Endereço, Bairro, CEP e Imagem
-     int cnpj;
-     String razao_social;
-     String nome_fantasia;
-     Endereco end;
-     String bandeira;
-     String imagem;
-     Total_Combustivel comb;
+    
+     private String cnpj;
+     private String razao_social;
+     private String nome_fantasia;
+     private String bandeira;
+     private String imagem;
+     private String endereco;
+     private String bairro;
+     private int cep;
+     
+     
+    public String getEndereco() {
+        return endereco;
+    }
 
-    public int getCnpj() {
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public int getCep() {
+        return cep;
+    }
+
+    public void setCep(int cep) {
+        this.cep = cep;
+    }
+
+    public String getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(int cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
@@ -43,13 +69,6 @@ public class Posto {
         this.nome_fantasia = nome_fantasia;
     }
 
-    public Endereco getEnd() {
-        return end;
-    }
-
-    public void setEnd(Endereco end) {
-        this.end = end;
-    }
 
     public String getBandeira() {
         return bandeira;
@@ -66,20 +85,13 @@ public class Posto {
     public void setImagem(String imagem) {
         this.imagem = imagem;
     }
-
-    public Total_Combustivel getComb() {
-        return comb;
-    }
-
-    public void setComb(Total_Combustivel comb) {
-        this.comb = comb;
-    }
+    
+    //teste - dlt depois
 
     @Override
     public String toString() {
-        return "Posto{" + "cnpj=" + cnpj + ", razao_social=" + razao_social + ", nome_fantasia=" + nome_fantasia + ", end=" + end + ", bandeira=" + bandeira + ", imagem=" + imagem + ", comb=" + comb + '}';
+        return "Posto{" + "cnpj=" + cnpj + ", razao_social=" + razao_social + ", nome_fantasia=" + nome_fantasia + ", bandeira=" + bandeira + ", imagem=" + imagem + ", endereco=" + endereco + ", bairro=" + bairro + ", cep=" + cep + '}';
     }
-    
     
 
 }

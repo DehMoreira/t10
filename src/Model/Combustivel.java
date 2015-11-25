@@ -10,6 +10,7 @@ package Model;
  * @author debora
  */
 public class Combustivel {
+    private Posto posto;
     private String tipo;
     private Data data_preco;
     private float preco;
@@ -38,10 +39,7 @@ public class Combustivel {
         this.preco = preco;
     }
 
-    @Override
-    public String toString() {
-        return "Combustivel{" + "tipo=" + tipo + ", data_preco=" + data_preco + ", preco=" + preco + '}';
-    }
+
     
     
 }

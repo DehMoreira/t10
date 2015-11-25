@@ -6,11 +6,9 @@
 package Controler;
 
 import Model.Combustivel;
-import Model.Crud_Postos;
+import Model.TotalPostos;
 import Model.Data;
-import Model.Endereco;
 import Model.Posto;
-import Model.Total_Combustivel;
 
 
 /**
@@ -24,39 +22,45 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        Combustivel combustivel = new Combustivel();
-        Endereco end = new Endereco();
         Posto posto = new Posto();
-        Crud_Postos cp = new Crud_Postos();
-        Total_Combustivel tc = new Total_Combustivel();
-        Data data = new Data();
+        posto.setBairro("1");
+        posto.setBandeira("1");
+        posto.setCep(1);
+        posto.setCnpj("1");
+        posto.setEndereco("1");
+        posto.setImagem("1");
+        posto.setNome_fantasia("1");
+        posto.setRazao_social("1");
         
+        Posto posto2 = new Posto();
+        posto2.setBairro("2");
+        posto2.setBandeira("2");
+        posto2.setCep(2);
+        posto2.setCnpj("2");
+        posto2.setEndereco("2");
+        posto2.setImagem("2");
+        posto2.setNome_fantasia("2");
+        posto2.setRazao_social("2");
         
-        data.setDia(10);
-        data.setMes(07);
-        data.setAno(2015);
+        Posto posto3 = new Posto();
+        posto3.setBairro("3");
+        posto3.setBandeira("3");
+        posto3.setCep(3);
+        posto3.setCnpj("3");
+        posto3.setEndereco("3");
+        posto3.setImagem("3");
+        posto3.setNome_fantasia("3");
+        posto3.setRazao_social("3");
         
-        combustivel.setData_preco(data);
-        combustivel.setPreco((float) 2.50);
-        combustivel.setTipo("gasolina");
+        TotalPostos tp = new TotalPostos();
+ 
+        tp.Add(posto);
+        tp.Add(posto2);
+        tp.Add(posto3);
         
-        tc.Add(combustivel);
-        
-        end.setBairro("JK");
-        end.setCep(97035560);
-        end.setEndereco("aaaaaaaa");
-        
-        posto.setCnpj(101010);
-        posto.setBandeira("aaaa");
-        posto.setComb(tc);
-        posto.setEnd(end);
-        posto.setImagem("aaaaaaa");
-        posto.setNome_fantasia("santa marta");
-        posto.setRazao_social("aaaa");
-        
-        
-        System.out.println(posto);
-        
+        tp.SalvaArquivo(posto);
+        tp.SalvaArquivo(posto2);
+        tp.SalvaArquivo(posto3);
         
         // TODO code application logic here
     }
