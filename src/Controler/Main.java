@@ -9,6 +9,7 @@ import Model.Combustivel;
 import Model.TotalPostos;
 import Model.Data;
 import Model.Posto;
+import Model.TotalCombustivel;
 
 
 /**
@@ -23,51 +24,30 @@ public class Main {
     public static void main(String[] args) {
         
     TotalPostos tp = new TotalPostos();
+    TotalCombustivel tc = new TotalCombustivel();
+    Combustivel combustivel = new Combustivel();
+        Posto posto = new Posto();
+        Data data = new Data();
         
-    /*    Posto posto = new Posto();
-        posto.setBairro("1");
-        posto.setBandeira("1");
-        posto.setCep(1);
-        posto.setCnpj("1");
-        posto.setEndereco("1");
-        posto.setImagem("1");
-        posto.setNome_fantasia("1");
-        posto.setRazao_social("1");
-        
-        Posto posto2 = new Posto();
-        posto2.setBairro("2");
-        posto2.setBandeira("2");
-        posto2.setCep(2);
-        posto2.setCnpj("2");
-        posto2.setEndereco("2");
-        posto2.setImagem("2");
-        posto2.setNome_fantasia("2");
-        posto2.setRazao_social("2");
-        
-        Posto posto3 = new Posto();
-        posto3.setBairro("3");
-        posto3.setBandeira("3");
-        posto3.setCep(3);
-        posto3.setCnpj("3");
-        posto3.setEndereco("3");
-        posto3.setImagem("3");
-        posto3.setNome_fantasia("3");
-        posto3.setRazao_social("3");
-        
-        
- 
-        tp.Add(posto);
-        tp.Add(posto2);
-        tp.Add(posto3);
-        
-        tp.SalvaArquivo(posto);
-        tp.SalvaArquivo(posto2);
-        tp.SalvaArquivo(posto3);
-        */
-    
     tp.LeArquivo();
-    //tp.Mostra();
+    
+    posto=tp.BuscaPosto("1a");
+    data.setDia(03);
+    data.setMes(07);
+    data.setAno(1995);
+  
+    
+    combustivel.setPosto(posto);
+    combustivel.setData_preco(data);
+    combustivel.setTipo("gasolina");
+    combustivel.setPreco((float) 2.5);
+
+    
+    tc.Add(combustivel);
+    tc.SalvaArquivo(combustivel);
         
+
+       
         
         
         // TODO code application logic here

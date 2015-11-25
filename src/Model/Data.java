@@ -19,9 +19,6 @@ public class Data {
     }
 
     public void setDia(int dia) {
-        if (dia > 30)
-            System.out.println("Data invalida");
-        else
             this.dia = dia;        
     }
 
@@ -30,10 +27,6 @@ public class Data {
     }
 
    public void setMes(int mes) {
-        if (mes > 12)
-            System.out.println("Data invalida");
-        
-        else
             this.mes = mes;
     }
     
@@ -48,7 +41,7 @@ public class Data {
 
     @Override
     public String toString() {
-        return dia + "_" + mes + "_" + ano;
+        return dia + "|" + mes + "|" + ano;
     }
     
     

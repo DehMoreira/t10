@@ -15,6 +15,16 @@ public class Combustivel {
     private Data data_preco;
     private float preco;
 
+    public Posto getPosto() {
+        return posto;
+    }
+
+    public void setPosto(Posto posto) {
+        this.posto = posto;
+    }
+
+    
+    
     public String getTipo() {
         return tipo;
     }

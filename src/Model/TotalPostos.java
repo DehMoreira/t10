@@ -40,16 +40,6 @@ public class TotalPostos {
       return achou;
       }
     
-    //Teste - dlt depois
-    public String Mostra () {
-      String result = "";
-      for (int i = 0; i < p.size(); i++) {
-          System.out.println(i + ":");
-         result += p.get(i).toString() + '\n';
-      }
-      return ("".equals(result)) ? ("Ainda não foi cadastrado nenhum posto!") : (result);
-    } 
-    
     
     
     
@@ -81,28 +71,25 @@ public class TotalPostos {
         
         while (scanner.hasNext()) {
             String cnpj = scanner.next();
-            System.out.println(cnpj);
             String razao_social = scanner.next();
-            System.out.println(razao_social);
             String nome_fantasia = scanner.next();
-            System.out.println(nome_fantasia);
             String bandeira = scanner.next();
-            System.out.println(bandeira);
+            String imagem = scanner.next();
             String endereco = scanner.next();
-            System.out.println(endereco);
             String cep = scanner.next();
-            System.out.println(cep);
-            String bairro = cep.substring(0, cep.length() - 1);
-            System.out.println(bairro);
-            
-            //int i = Integer.parseInt(cep);
-            int i= 1;
+            String aux = scanner.next();
+            String bairro = aux.substring(0, aux.length() - 1);
+
+
+                      
+            int i = Integer.parseInt(cep);
             
             Posto posto = new Posto();
             posto.setCnpj(cnpj);
             posto.setRazao_social(razao_social);
             posto.setNome_fantasia(nome_fantasia);
             posto.setBandeira(bandeira);
+            posto.setImagem(imagem);
             posto.setEndereco(endereco);
             posto.setBairro(bairro);
             posto.setCep(i);
