@@ -45,7 +45,7 @@ public class TotalPostos {
     
     public void SalvaArquivo (Posto posto){
         File dir = new File(".");
-        File arq = new File(dir, "postos.txt");
+        File arq = new File(dir, "postos.json");
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(arq, true);
@@ -63,7 +63,7 @@ public class TotalPostos {
     public void LeArquivo() {
         Scanner scanner = null;
         try {
-            scanner = new Scanner(new FileReader("postos.txt"))
+            scanner = new Scanner(new FileReader("postos.json"))
                     .useDelimiter("\\||\\n");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(TotalPostos.class.getName()).log(Level.SEVERE, null, ex);

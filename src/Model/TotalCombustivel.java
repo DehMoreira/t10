@@ -27,11 +27,21 @@ public class TotalCombustivel {
     public void Add(Combustivel comb) {
       c.add(comb);
     }
+    
+    
+    public String Mostra() {
+      String result = "";
+      for (int i = 0; i < c.size(); i++) {
+         result += c.get(i).toString() + '\n';
+      }
+   
+      return ("".equals(result)) ? ("Not!") : (result);
+   }
          
          
     public void SalvaArquivo(Combustivel comb){
         File dir = new File(".");
-        File arq = new File(dir, "historicocomb.txt");
+        File arq = new File(dir, "historicocomb.json");
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(arq, true);
@@ -49,7 +59,7 @@ public class TotalCombustivel {
     public void LeArquivo(){
         Scanner scanner = null;
         try {
-            scanner = new Scanner(new FileReader("historicocomb.txt"))
+            scanner = new Scanner(new FileReader("historicocomb.json"))
                     .useDelimiter("\\||\\n");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(TotalCombustivel.class.getName()).log(Level.SEVERE, null, ex);

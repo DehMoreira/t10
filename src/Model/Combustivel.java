@@ -23,8 +23,6 @@ public class Combustivel {
         this.posto = posto;
     }
 
-    
-    
     public String getTipo() {
         return tipo;
     }
@@ -47,6 +45,11 @@ public class Combustivel {
 
     public void setPreco(float preco) {
         this.preco = preco;
+    }
+
+    @Override
+    public String toString() {
+        return "Combustivel{" + "posto=" + posto + ", tipo=" + tipo + ", data_preco=" + data_preco + ", preco=" + preco + '}';
     }
 
 
