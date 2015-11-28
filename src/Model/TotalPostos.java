@@ -30,7 +30,6 @@ public class TotalPostos {
     }
       
     public Posto BuscaPosto (String cnpj) {
-      LeArquivo();
       Posto achou = null;
       for (int i = 0; i < p.size(); i++) {
          if (cnpj.equals(p.get(i).getCnpj())) {

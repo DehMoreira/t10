@@ -19,10 +19,12 @@ public class OpControler {
     TotalPostos tp = new TotalPostos();
     
     public void Cadastro (String cnpj, String razao_social, String nome_fantasia, String bandeira, String imagem, String endereco, String bairro, String cep) {      
-                Posto p = new Posto();
-                p.setCnpj(cnpj);                               
+                Posto aux = new Posto();
+                aux.setCnpj(cnpj);
                 tp.LeArquivo();
-                if(tp.BuscaPosto(p.getCnpj())== null){
+                if(tp.BuscaPosto(aux.getCnpj())== null){
+                    Posto p = new Posto();                   
+                    p.setCnpj(cnpj);
                     p.setRazao_social(razao_social);
                     p.setNome_fantasia(nome_fantasia);
                     p.setBandeira(bandeira);
@@ -31,8 +33,8 @@ public class OpControler {
                     p.setBairro(bairro);
                     int n = Integer.parseInt(cep);
                     p.setCep(n); 
-                    tp.Add(posto);
-                    tp.SalvaArquivo(posto);
+                    tp.Add(p);
+                    tp.SalvaArquivo(p);
                     JOptionPane.showMessageDialog(null, "Posto Cadastrado com sucesso");
                 } 
                 
