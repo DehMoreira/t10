@@ -9,6 +9,7 @@ import Model.OpControler;
 
 
 
+
 /**
  *
  * @author debora
@@ -23,11 +24,13 @@ public class Controler {
     
     
     public void Cadastro(String cnpj, String razao_social, String nome_fantasia, String bandeira, String imagem, String endereco, String bairro, String cep){
-        System.out.println(cnpj);
-        model.Cadastro (cnpj, razao_social, nome_fantasia, bandeira, imagem, endereco, bairro, cep);
-            
+        model.Cadastro (cnpj, razao_social, nome_fantasia, bandeira, imagem, endereco, bairro, cep);           
     }
-
-
+    
+    public void CadastroP(String cnpj, int dia, int mes, String ano, String combustivel, String preco){
+        model.Cadastro_preco(cnpj, dia, mes, ano, combustivel, preco);
+    }
+    
+    
     
 }

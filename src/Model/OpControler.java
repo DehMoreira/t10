@@ -12,9 +12,6 @@ import javax.swing.JOptionPane;
  * @author debora
  */
 public class OpControler {
-    Combustivel combustivel = new Combustivel();
-    Data data = new Data();
-    Posto posto = new Posto();
     TotalCombustivel tc = new TotalCombustivel();
     TotalPostos tp = new TotalPostos();
     
@@ -42,6 +39,31 @@ public class OpControler {
                     JOptionPane.showMessageDialog(null, "CNPJ do posto já cadastrado");
 }
 
+    public void Cadastro_preco(String cnpj, int dia, int mes, String ano, String combustivel, String preco){
+            Posto aux = new Posto();
+            aux.setCnpj(cnpj);
+            tp.LeArquivo();
+            if(tp.BuscaPosto(aux.getCnpj())!= null){
+                //int d = Integer.parseInt(dia);
+                //int m = Integer.parseInt(mes);
+                int a = Integer.parseInt(ano);
+                float p = Float.parseFloat(preco);
+                Data data = new Data();
+                data.setDia(dia);
+                data.setMes(mes);
+                data.setAno(a);
+                Combustivel comb = new Combustivel();
+                comb.setPosto(aux);
+                comb.setPreco(p);
+                comb.setTipo(combustivel);
+                comb.setData_preco(data);
+                tc.Add(comb);
+                tc.SalvaArquivo(comb);
+                JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
+            }
+            else
+                JOptionPane.showMessageDialog(null, "CNPJ do posto não foi encontrado");
+    }
 
     
 }

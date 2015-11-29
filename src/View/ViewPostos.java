@@ -52,12 +52,23 @@ public class ViewPostos extends javax.swing.JFrame {
         endereco = new javax.swing.JTextField();
         bairro = new javax.swing.JTextField();
         cep = new javax.swing.JTextField();
-        PainelAlteracoes = new javax.swing.JPanel();
-        LabelDescricao2 = new javax.swing.JLabel();
-        PainelExclusao = new javax.swing.JPanel();
-        LabelDescricao3 = new javax.swing.JLabel();
-        PainelVisualizacao = new javax.swing.JPanel();
-        LabelDescricao4 = new javax.swing.JLabel();
+        PainelPrecos = new javax.swing.JPanel();
+        LabelDescricao6 = new javax.swing.JLabel();
+        LabelCNPJ1 = new javax.swing.JLabel();
+        cnpj_preco = new javax.swing.JTextField();
+        LabelCNPJ2 = new javax.swing.JLabel();
+        combustivel = new javax.swing.JComboBox();
+        LabelCNPJ3 = new javax.swing.JLabel();
+        LabelCNPJ4 = new javax.swing.JLabel();
+        preco = new javax.swing.JTextField();
+        dia = new javax.swing.JComboBox();
+        mes = new javax.swing.JComboBox();
+        ano = new javax.swing.JTextField();
+        botaoPreco = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        LabelDescricao7 = new javax.swing.JLabel();
+        LabelCNPJ5 = new javax.swing.JLabel();
+        bairroProcura = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,7 +76,7 @@ public class ViewPostos extends javax.swing.JFrame {
 
         LabelDesc.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         LabelDesc.setForeground(new java.awt.Color(255, 153, 153));
-        LabelDesc.setText("Para efetuar o cadastro insira os seguintes dados: ");
+        LabelDesc.setText("Para efetuar o cadastro informe os seguintes dados: ");
 
         LabelDescricao5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         LabelDescricao5.setForeground(new java.awt.Color(255, 153, 153));
@@ -123,179 +134,242 @@ public class ViewPostos extends javax.swing.JFrame {
             .addGroup(LabelCEPLayout.createSequentialGroup()
                 .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(LabelCEPLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(LabelCEPLayout.createSequentialGroup()
-                                .addComponent(LabelBairro1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cep, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(LabelCEPLayout.createSequentialGroup()
+                        .addGap(212, 212, 212)
+                        .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(LabelNomeFantasia)
+                                .addComponent(NomeFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelBandeira)
+                                .addComponent(Bandeira, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(LabelImagem)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(URL, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(LabelDesc)
-                            .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, LabelCEPLayout.createSequentialGroup()
-                                    .addComponent(LabelCNPJ)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(LabelCEPLayout.createSequentialGroup()
-                                    .addComponent(LabelBandeira)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(Bandeira))
-                                .addGroup(LabelCEPLayout.createSequentialGroup()
-                                    .addComponent(LabelNomeFantasia)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(NomeFantasia))
-                                .addGroup(LabelCEPLayout.createSequentialGroup()
-                                    .addComponent(LabelRazaoSocial)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(razaosocial, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(LabelCEPLayout.createSequentialGroup()
-                                    .addComponent(LabelBairro)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(bairro))
-                                .addGroup(LabelCEPLayout.createSequentialGroup()
-                                    .addComponent(LabelEndereco)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(URL, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelEndereco)
+                                .addComponent(endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelBairro)
+                                .addComponent(bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelBairro1)
+                                .addComponent(cep, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(LabelRazaoSocial)
+                                .addComponent(razaosocial, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(LabelCNPJ)
+                                .addComponent(cnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(LabelCEPLayout.createSequentialGroup()
+                        .addGap(255, 255, 255)
+                        .addComponent(LabelDescricao5))
                     .addGroup(LabelCEPLayout.createSequentialGroup()
                         .addGap(306, 306, 306)
-                        .addComponent(BotaoCadastro)))
-                .addContainerGap(189, Short.MAX_VALUE))
-            .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(LabelCEPLayout.createSequentialGroup()
-                    .addGap(254, 254, 254)
-                    .addComponent(LabelDescricao5)
-                    .addContainerGap(263, Short.MAX_VALUE)))
+                        .addComponent(BotaoCadastro))
+                    .addGroup(LabelCEPLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(LabelDesc)))
+                .addContainerGap(282, Short.MAX_VALUE))
         );
         LabelCEPLayout.setVerticalGroup(
             LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LabelCEPLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
+                .addComponent(LabelDescricao5)
+                .addGap(11, 11, 11)
                 .addComponent(LabelDesc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelCNPJ)
-                    .addComponent(cnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(LabelCNPJ)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelRazaoSocial)
-                    .addComponent(razaosocial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(cnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelNomeFantasia)
-                    .addComponent(NomeFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(LabelRazaoSocial)
+                .addGap(4, 4, 4)
+                .addComponent(razaosocial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(LabelNomeFantasia)
+                .addGap(1, 1, 1)
+                .addComponent(NomeFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelBandeira)
-                    .addComponent(Bandeira, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(LabelBandeira)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelImagem)
-                    .addComponent(URL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Bandeira, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelEndereco)
-                    .addComponent(endereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(LabelImagem)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelBairro)
-                    .addComponent(bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(URL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelBairro1)
-                    .addComponent(cep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LabelEndereco)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(endereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelBairro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelBairro1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(BotaoCadastro)
-                .addContainerGap())
-            .addGroup(LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(LabelCEPLayout.createSequentialGroup()
-                    .addGap(21, 21, 21)
-                    .addComponent(LabelDescricao5)
-                    .addContainerGap(296, Short.MAX_VALUE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         Aba_Cadastro.addTab("Cadastrar Posto", LabelCEP);
 
-        LabelDescricao2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        LabelDescricao2.setForeground(new java.awt.Color(255, 153, 153));
-        LabelDescricao2.setText("Alterando os dados de um Posto já cadastrado");
+        LabelDescricao6.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        LabelDescricao6.setForeground(new java.awt.Color(255, 153, 153));
+        LabelDescricao6.setText("Cadastrando preço dos Combustíveis");
 
-        javax.swing.GroupLayout PainelAlteracoesLayout = new javax.swing.GroupLayout(PainelAlteracoes);
-        PainelAlteracoes.setLayout(PainelAlteracoesLayout);
-        PainelAlteracoesLayout.setHorizontalGroup(
-            PainelAlteracoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelAlteracoesLayout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addComponent(LabelDescricao2)
-                .addContainerGap(156, Short.MAX_VALUE))
+        LabelCNPJ1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        LabelCNPJ1.setForeground(new java.awt.Color(255, 153, 153));
+        LabelCNPJ1.setText("Informe o CNPJ do Posto:");
+
+        LabelCNPJ2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        LabelCNPJ2.setForeground(new java.awt.Color(255, 153, 153));
+        LabelCNPJ2.setText("Selecione o tipo de combustível:");
+
+        combustivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "gasolina", "diesel", "etanol", " " }));
+        combustivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combustivelActionPerformed(evt);
+            }
+        });
+
+        LabelCNPJ3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        LabelCNPJ3.setForeground(new java.awt.Color(255, 153, 153));
+        LabelCNPJ3.setText("Informe a data de coleta do preço:");
+
+        LabelCNPJ4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        LabelCNPJ4.setForeground(new java.awt.Color(255, 153, 153));
+        LabelCNPJ4.setText("Informe o preco:");
+
+        preco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                precoActionPerformed(evt);
+            }
+        });
+
+        dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        dia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                diaActionPerformed(evt);
+            }
+        });
+
+        mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+
+        botaoPreco.setText("Cadastrar");
+        botaoPreco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoPrecoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PainelPrecosLayout = new javax.swing.GroupLayout(PainelPrecos);
+        PainelPrecos.setLayout(PainelPrecosLayout);
+        PainelPrecosLayout.setHorizontalGroup(
+            PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelPrecosLayout.createSequentialGroup()
+                .addContainerGap(218, Short.MAX_VALUE)
+                .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelCNPJ3)
+                    .addComponent(LabelDescricao6)
+                    .addComponent(LabelCNPJ1)
+                    .addComponent(LabelCNPJ4)
+                    .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(PainelPrecosLayout.createSequentialGroup()
+                            .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(LabelCNPJ2)))
+                .addGap(207, 207, 207))
+            .addGroup(PainelPrecosLayout.createSequentialGroup()
+                .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PainelPrecosLayout.createSequentialGroup()
+                        .addGap(272, 272, 272)
+                        .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(combustivel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(preco, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(PainelPrecosLayout.createSequentialGroup()
+                        .addGap(311, 311, 311)
+                        .addComponent(botaoPreco))
+                    .addGroup(PainelPrecosLayout.createSequentialGroup()
+                        .addGap(271, 271, 271)
+                        .addComponent(cnpj_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        PainelAlteracoesLayout.setVerticalGroup(
-            PainelAlteracoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelAlteracoesLayout.createSequentialGroup()
+        PainelPrecosLayout.setVerticalGroup(
+            PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelPrecosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelDescricao2)
-                .addContainerGap(306, Short.MAX_VALUE))
+                .addComponent(LabelDescricao6)
+                .addGap(55, 55, 55)
+                .addComponent(LabelCNPJ1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cnpj_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelCNPJ3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(LabelCNPJ2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(combustivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelCNPJ4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botaoPreco)
+                .addGap(0, 177, Short.MAX_VALUE))
         );
 
-        Aba_Cadastro.addTab("Alterar Dados", PainelAlteracoes);
+        Aba_Cadastro.addTab("Cadastro Preco", PainelPrecos);
 
-        LabelDescricao3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        LabelDescricao3.setForeground(new java.awt.Color(255, 153, 153));
-        LabelDescricao3.setText("Deletando um Posto cadastrado");
+        LabelDescricao7.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        LabelDescricao7.setForeground(new java.awt.Color(255, 153, 153));
+        LabelDescricao7.setText("Buscar postos de um bairro:");
 
-        javax.swing.GroupLayout PainelExclusaoLayout = new javax.swing.GroupLayout(PainelExclusao);
-        PainelExclusao.setLayout(PainelExclusaoLayout);
-        PainelExclusaoLayout.setHorizontalGroup(
-            PainelExclusaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelExclusaoLayout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(LabelDescricao3)
-                .addContainerGap(238, Short.MAX_VALUE))
+        LabelCNPJ5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        LabelCNPJ5.setForeground(new java.awt.Color(255, 153, 153));
+        LabelCNPJ5.setText("Informe o Bairro:");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(LabelDescricao7))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(287, 287, 287)
+                        .addComponent(bairroProcura, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(302, 302, 302)
+                        .addComponent(LabelCNPJ5)))
+                .addContainerGap(257, Short.MAX_VALUE))
         );
-        PainelExclusaoLayout.setVerticalGroup(
-            PainelExclusaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelExclusaoLayout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelDescricao3)
-                .addContainerGap(306, Short.MAX_VALUE))
+                .addComponent(LabelDescricao7)
+                .addGap(71, 71, 71)
+                .addComponent(LabelCNPJ5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bairroProcura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(386, Short.MAX_VALUE))
         );
 
-        Aba_Cadastro.addTab("Deletar Posto", PainelExclusao);
-
-        LabelDescricao4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        LabelDescricao4.setForeground(new java.awt.Color(255, 153, 153));
-        LabelDescricao4.setText("Visualizar Dados de um Posto Cadastrado");
-
-        javax.swing.GroupLayout PainelVisualizacaoLayout = new javax.swing.GroupLayout(PainelVisualizacao);
-        PainelVisualizacao.setLayout(PainelVisualizacaoLayout);
-        PainelVisualizacaoLayout.setHorizontalGroup(
-            PainelVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelVisualizacaoLayout.createSequentialGroup()
-                .addContainerGap(187, Short.MAX_VALUE)
-                .addComponent(LabelDescricao4)
-                .addGap(171, 171, 171))
-        );
-        PainelVisualizacaoLayout.setVerticalGroup(
-            PainelVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelVisualizacaoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelDescricao4)
-                .addContainerGap(306, Short.MAX_VALUE))
-        );
-
-        Aba_Cadastro.addTab("Mostrar", PainelVisualizacao);
+        Aba_Cadastro.addTab("Buscar Postos", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Aba_Cadastro)
-                .addContainerGap())
+            .addComponent(Aba_Cadastro)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,16 +379,33 @@ public class ViewPostos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotaoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastroActionPerformed
-        // TODO add your handling code here:
-        //cnpj, razao_social, nome_fantasia, bandeira, imagem, endereco, bairro, cep
-        System.out.println(getCnpj().getText());
-        controler.Cadastro(getCnpj().getText(),getRazaosocial().getText(), getNomeFantasia().getText(),getBandeira().getText(),getURL().getText(),getEndereco().getText(),getBairro().getText(),getCep().getText());
-    }//GEN-LAST:event_BotaoCadastroActionPerformed
-
     private void cnpjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnpjActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cnpjActionPerformed
+
+    private void BotaoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastroActionPerformed
+        // TODO add your handling code here:
+        controler.Cadastro(getCnpj().getText(),getRazaosocial().getText(), getNomeFantasia().getText(),getBandeira().getText(),getURL().getText(),getEndereco().getText(),getBairro().getText(),getCep().getText());
+    }//GEN-LAST:event_BotaoCadastroActionPerformed
+
+    private void combustivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combustivelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combustivelActionPerformed
+
+    private void precoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_precoActionPerformed
+
+    private void diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_diaActionPerformed
+
+    private void botaoPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPrecoActionPerformed
+        // TODO add your handling code here:
+        //String cnpj, String dia, String mes, String ano, String combustivel, String preco
+
+        controler.CadastroP(getCnpj_preco().getText(), dia.getSelectedIndex()+1,mes.getSelectedIndex()+1,getAno().getText(), (String) combustivel.getSelectedItem(), getPreco().getText());
+    }//GEN-LAST:event_botaoPrecoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -350,6 +441,18 @@ public class ViewPostos extends javax.swing.JFrame {
             }
             
         });
+    }
+
+    public JTextField getAno() {
+        return ano;
+    }
+
+    public JTextField getCnpj_preco() {
+        return cnpj_preco;
+    }
+
+    public JTextField getPreco() {
+        return preco;
     }
 
     public JTextField getCnpj() {
@@ -394,24 +497,35 @@ public class ViewPostos extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBandeira;
     private javax.swing.JPanel LabelCEP;
     private javax.swing.JLabel LabelCNPJ;
+    private javax.swing.JLabel LabelCNPJ1;
+    private javax.swing.JLabel LabelCNPJ2;
+    private javax.swing.JLabel LabelCNPJ3;
+    private javax.swing.JLabel LabelCNPJ4;
+    private javax.swing.JLabel LabelCNPJ5;
     private javax.swing.JLabel LabelDesc;
-    private javax.swing.JLabel LabelDescricao2;
-    private javax.swing.JLabel LabelDescricao3;
-    private javax.swing.JLabel LabelDescricao4;
     private javax.swing.JLabel LabelDescricao5;
+    private javax.swing.JLabel LabelDescricao6;
+    private javax.swing.JLabel LabelDescricao7;
     private javax.swing.JLabel LabelEndereco;
     private javax.swing.JLabel LabelImagem;
     private javax.swing.JLabel LabelNomeFantasia;
     private javax.swing.JLabel LabelRazaoSocial;
     private javax.swing.JTextField NomeFantasia;
-    private javax.swing.JPanel PainelAlteracoes;
-    private javax.swing.JPanel PainelExclusao;
-    private javax.swing.JPanel PainelVisualizacao;
+    private javax.swing.JPanel PainelPrecos;
     private javax.swing.JTextField URL;
+    private javax.swing.JTextField ano;
     private javax.swing.JTextField bairro;
+    private javax.swing.JTextField bairroProcura;
+    private javax.swing.JButton botaoPreco;
     private javax.swing.JTextField cep;
     private javax.swing.JTextField cnpj;
+    private javax.swing.JTextField cnpj_preco;
+    private javax.swing.JComboBox combustivel;
+    private javax.swing.JComboBox dia;
     private javax.swing.JTextField endereco;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox mes;
+    private javax.swing.JTextField preco;
     private javax.swing.JTextField razaosocial;
     // End of variables declaration//GEN-END:variables
 }
