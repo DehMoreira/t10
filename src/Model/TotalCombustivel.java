@@ -5,16 +5,21 @@
  */
 package Model;
 
+import java.awt.FlowLayout;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 
 /**
  *
@@ -28,17 +33,39 @@ public class TotalCombustivel {
       c.add(comb);
     }
     
-    
-    public String Mostra() {
-      String result = "";
+    public Combustivel BuscaPostoCombustivel (String cnpj) {
+      LeArquivo();
+      Combustivel achou = null;
       for (int i = 0; i < c.size(); i++) {
-         result += c.get(i).toString() + '\n';
+          if (cnpj.equals(c.get(i).getPosto().getBairro()))
+               achou = c.get(i);}
+      return achou;
+    }    
+    /**
+     *
+     * @param cnpj
+     * @return
+     */
+    public JTable GeraDados(String bairro){
+            ArrayList dados = new ArrayList(); 
+            String[] col = new String[] { "Posto","Combustivel", "Preço", "Data"  };
+            JPanel p = new JPanel();
+            p.setLayout(new FlowLayout());
+                
+            Combustivel comb = new Combustivel();   
+            comb = BuscaPostoCombustivel(bairro);
+            String s=Float.toString(comb.getPreco());
+            dados.add(new String[] {comb.getPosto().getCnpj(),comb.getTipo(), s, comb.getData_preco().toString()});
+
+            Table modelo = new Table(dados, col); 
+            JTable jtable = new JTable(modelo);  
+            jtable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);  
+            
+            p.add(jtable);
+
+            return(jtable);
       }
-   
-      return ("".equals(result)) ? ("Not!") : (result);
-   }
-         
-         
+    
     public void SalvaArquivo(Combustivel comb){
         File dir = new File(".");
         File arq = new File(dir, "historicocomb.json");
@@ -100,5 +127,6 @@ public class TotalCombustivel {
             
         }
     }
+
     
 }

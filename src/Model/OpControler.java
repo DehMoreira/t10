@@ -5,7 +5,10 @@
  */
 package Model;
 
+
+import java.net.MalformedURLException;
 import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -14,6 +17,7 @@ import javax.swing.JOptionPane;
 public class OpControler {
     TotalCombustivel tc = new TotalCombustivel();
     TotalPostos tp = new TotalPostos();
+
     
     public void Cadastro (String cnpj, String razao_social, String nome_fantasia, String bandeira, String imagem, String endereco, String bairro, String cep) {      
                 Posto aux = new Posto();
@@ -44,8 +48,6 @@ public class OpControler {
             aux.setCnpj(cnpj);
             tp.LeArquivo();
             if(tp.BuscaPosto(aux.getCnpj())!= null){
-                //int d = Integer.parseInt(dia);
-                //int m = Integer.parseInt(mes);
                 int a = Integer.parseInt(ano);
                 float p = Float.parseFloat(preco);
                 Data data = new Data();
@@ -64,6 +66,29 @@ public class OpControler {
             else
                 JOptionPane.showMessageDialog(null, "CNPJ do posto não foi encontrado");
     }
-
     
+    public void MostraPosto(String cnpj) throws MalformedURLException {
+           tp.LeArquivo();
+           //tc.LeArquivo();
+        if(tp.BuscaPosto(cnpj)!= null){
+
+           tp.GeraPainel(cnpj);
+        }
+        else 
+            JOptionPane.showMessageDialog(null, "CNPJ do posto não está cadastrado");
+    }
+    
+    public void MostraPostoBairro(String bairro) {
+        tp.LeArquivo();
+        if(tp.BuscaPostoBairro(bairro)!= null){
+            JOptionPane.showMessageDialog(null, "Postos cadastrados no bairro: " + bairro + "\n" + tp.BuscaPostoBairro(bairro));
+        
+        }
+        else
+                JOptionPane.showMessageDialog(null, "Não há postos deste bairro cadastrados");
+    }
+
 }
+       
+    
+

@@ -6,6 +6,9 @@
 package View;
 
 import Controler.Controler;
+import java.net.MalformedURLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JTextField;
 
 /**
@@ -32,6 +35,27 @@ public class ViewPostos extends javax.swing.JFrame {
     private void initComponents() {
 
         Aba_Cadastro = new javax.swing.JTabbedPane();
+        PainelPrecos = new javax.swing.JPanel();
+        LabelDescricao6 = new javax.swing.JLabel();
+        LabelCNPJ1 = new javax.swing.JLabel();
+        cnpj_preco = new javax.swing.JTextField();
+        LabelCNPJ2 = new javax.swing.JLabel();
+        combustivel = new javax.swing.JComboBox();
+        LabelCNPJ3 = new javax.swing.JLabel();
+        LabelCNPJ4 = new javax.swing.JLabel();
+        preco = new javax.swing.JTextField();
+        dia = new javax.swing.JComboBox();
+        mes = new javax.swing.JComboBox();
+        ano = new javax.swing.JTextField();
+        botaoPreco = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        LabelDescricao7 = new javax.swing.JLabel();
+        LabelCNPJ5 = new javax.swing.JLabel();
+        bairroProcura = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        LabelCNPJ6 = new javax.swing.JLabel();
+        CnpjProcura = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
         LabelCEP = new javax.swing.JPanel();
         LabelDesc = new javax.swing.JLabel();
         LabelDescricao5 = new javax.swing.JLabel();
@@ -52,25 +76,200 @@ public class ViewPostos extends javax.swing.JFrame {
         endereco = new javax.swing.JTextField();
         bairro = new javax.swing.JTextField();
         cep = new javax.swing.JTextField();
-        PainelPrecos = new javax.swing.JPanel();
-        LabelDescricao6 = new javax.swing.JLabel();
-        LabelCNPJ1 = new javax.swing.JLabel();
-        cnpj_preco = new javax.swing.JTextField();
-        LabelCNPJ2 = new javax.swing.JLabel();
-        combustivel = new javax.swing.JComboBox();
-        LabelCNPJ3 = new javax.swing.JLabel();
-        LabelCNPJ4 = new javax.swing.JLabel();
-        preco = new javax.swing.JTextField();
-        dia = new javax.swing.JComboBox();
-        mes = new javax.swing.JComboBox();
-        ano = new javax.swing.JTextField();
-        botaoPreco = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        LabelDescricao7 = new javax.swing.JLabel();
-        LabelCNPJ5 = new javax.swing.JLabel();
-        bairroProcura = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        LabelDescricao6.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        LabelDescricao6.setForeground(new java.awt.Color(255, 153, 153));
+        LabelDescricao6.setText("Cadastrando preço dos Combustíveis");
+
+        LabelCNPJ1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        LabelCNPJ1.setForeground(new java.awt.Color(255, 153, 153));
+        LabelCNPJ1.setText("Informe o CNPJ do Posto:");
+
+        LabelCNPJ2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        LabelCNPJ2.setForeground(new java.awt.Color(255, 153, 153));
+        LabelCNPJ2.setText("Selecione o tipo de combustível:");
+
+        combustivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "gasolina", "diesel", "etanol", " " }));
+        combustivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combustivelActionPerformed(evt);
+            }
+        });
+
+        LabelCNPJ3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        LabelCNPJ3.setForeground(new java.awt.Color(255, 153, 153));
+        LabelCNPJ3.setText("Informe a data de coleta do preço:");
+
+        LabelCNPJ4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        LabelCNPJ4.setForeground(new java.awt.Color(255, 153, 153));
+        LabelCNPJ4.setText("Informe o preco:");
+
+        preco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                precoActionPerformed(evt);
+            }
+        });
+
+        dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        dia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                diaActionPerformed(evt);
+            }
+        });
+
+        mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+
+        botaoPreco.setText("Cadastrar");
+        botaoPreco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoPrecoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PainelPrecosLayout = new javax.swing.GroupLayout(PainelPrecos);
+        PainelPrecos.setLayout(PainelPrecosLayout);
+        PainelPrecosLayout.setHorizontalGroup(
+            PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelPrecosLayout.createSequentialGroup()
+                .addContainerGap(189, Short.MAX_VALUE)
+                .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelCNPJ3)
+                    .addComponent(LabelDescricao6)
+                    .addComponent(LabelCNPJ1)
+                    .addComponent(LabelCNPJ4)
+                    .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(PainelPrecosLayout.createSequentialGroup()
+                            .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(LabelCNPJ2)))
+                .addGap(207, 207, 207))
+            .addGroup(PainelPrecosLayout.createSequentialGroup()
+                .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PainelPrecosLayout.createSequentialGroup()
+                        .addGap(272, 272, 272)
+                        .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(combustivel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(preco, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(PainelPrecosLayout.createSequentialGroup()
+                        .addGap(311, 311, 311)
+                        .addComponent(botaoPreco))
+                    .addGroup(PainelPrecosLayout.createSequentialGroup()
+                        .addGap(271, 271, 271)
+                        .addComponent(cnpj_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PainelPrecosLayout.setVerticalGroup(
+            PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelPrecosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelDescricao6)
+                .addGap(55, 55, 55)
+                .addComponent(LabelCNPJ1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cnpj_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelCNPJ3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(LabelCNPJ2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(combustivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelCNPJ4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botaoPreco)
+                .addGap(0, 176, Short.MAX_VALUE))
+        );
+
+        Aba_Cadastro.addTab("Cadastro Preco", PainelPrecos);
+
+        LabelDescricao7.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        LabelDescricao7.setForeground(new java.awt.Color(255, 153, 153));
+        LabelDescricao7.setText("Buscar postos de um bairro:");
+
+        LabelCNPJ5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        LabelCNPJ5.setForeground(new java.awt.Color(255, 153, 153));
+        LabelCNPJ5.setText("Informe o Bairro:");
+
+        jButton1.setText("Procurar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        LabelCNPJ6.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        LabelCNPJ6.setForeground(new java.awt.Color(255, 153, 153));
+        LabelCNPJ6.setText("Informe o CNPJ");
+
+        jButton2.setText("Procurar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(LabelDescricao7))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(302, 302, 302)
+                        .addComponent(LabelCNPJ5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(321, 321, 321)
+                        .addComponent(jButton1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(287, 287, 287)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(CnpjProcura, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(15, 15, 15)
+                                    .addComponent(LabelCNPJ6))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(34, 34, 34)
+                                    .addComponent(jButton2)))
+                            .addComponent(bairroProcura, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(228, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelDescricao7)
+                .addGap(71, 71, 71)
+                .addComponent(LabelCNPJ5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bairroProcura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addGap(48, 48, 48)
+                .addComponent(LabelCNPJ6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CnpjProcura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addContainerGap(222, Short.MAX_VALUE))
+        );
+
+        Aba_Cadastro.addTab("Buscar Postos", jPanel1);
 
         LabelCEP.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
 
@@ -164,7 +363,7 @@ public class ViewPostos extends javax.swing.JFrame {
                     .addGroup(LabelCEPLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(LabelDesc)))
-                .addContainerGap(282, Short.MAX_VALUE))
+                .addContainerGap(253, Short.MAX_VALUE))
         );
         LabelCEPLayout.setVerticalGroup(
             LabelCEPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,164 +405,10 @@ public class ViewPostos extends javax.swing.JFrame {
                 .addComponent(cep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BotaoCadastro)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Aba_Cadastro.addTab("Cadastrar Posto", LabelCEP);
-
-        LabelDescricao6.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        LabelDescricao6.setForeground(new java.awt.Color(255, 153, 153));
-        LabelDescricao6.setText("Cadastrando preço dos Combustíveis");
-
-        LabelCNPJ1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelCNPJ1.setForeground(new java.awt.Color(255, 153, 153));
-        LabelCNPJ1.setText("Informe o CNPJ do Posto:");
-
-        LabelCNPJ2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelCNPJ2.setForeground(new java.awt.Color(255, 153, 153));
-        LabelCNPJ2.setText("Selecione o tipo de combustível:");
-
-        combustivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "gasolina", "diesel", "etanol", " " }));
-        combustivel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combustivelActionPerformed(evt);
-            }
-        });
-
-        LabelCNPJ3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelCNPJ3.setForeground(new java.awt.Color(255, 153, 153));
-        LabelCNPJ3.setText("Informe a data de coleta do preço:");
-
-        LabelCNPJ4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelCNPJ4.setForeground(new java.awt.Color(255, 153, 153));
-        LabelCNPJ4.setText("Informe o preco:");
-
-        preco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                precoActionPerformed(evt);
-            }
-        });
-
-        dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        dia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                diaActionPerformed(evt);
-            }
-        });
-
-        mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-
-        botaoPreco.setText("Cadastrar");
-        botaoPreco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoPrecoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout PainelPrecosLayout = new javax.swing.GroupLayout(PainelPrecos);
-        PainelPrecos.setLayout(PainelPrecosLayout);
-        PainelPrecosLayout.setHorizontalGroup(
-            PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelPrecosLayout.createSequentialGroup()
-                .addContainerGap(218, Short.MAX_VALUE)
-                .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelCNPJ3)
-                    .addComponent(LabelDescricao6)
-                    .addComponent(LabelCNPJ1)
-                    .addComponent(LabelCNPJ4)
-                    .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(PainelPrecosLayout.createSequentialGroup()
-                            .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(LabelCNPJ2)))
-                .addGap(207, 207, 207))
-            .addGroup(PainelPrecosLayout.createSequentialGroup()
-                .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PainelPrecosLayout.createSequentialGroup()
-                        .addGap(272, 272, 272)
-                        .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(combustivel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(preco, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(PainelPrecosLayout.createSequentialGroup()
-                        .addGap(311, 311, 311)
-                        .addComponent(botaoPreco))
-                    .addGroup(PainelPrecosLayout.createSequentialGroup()
-                        .addGap(271, 271, 271)
-                        .addComponent(cnpj_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        PainelPrecosLayout.setVerticalGroup(
-            PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelPrecosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelDescricao6)
-                .addGap(55, 55, 55)
-                .addComponent(LabelCNPJ1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cnpj_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LabelCNPJ3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PainelPrecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LabelCNPJ2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(combustivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LabelCNPJ4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botaoPreco)
-                .addGap(0, 177, Short.MAX_VALUE))
-        );
-
-        Aba_Cadastro.addTab("Cadastro Preco", PainelPrecos);
-
-        LabelDescricao7.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        LabelDescricao7.setForeground(new java.awt.Color(255, 153, 153));
-        LabelDescricao7.setText("Buscar postos de um bairro:");
-
-        LabelCNPJ5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelCNPJ5.setForeground(new java.awt.Color(255, 153, 153));
-        LabelCNPJ5.setText("Informe o Bairro:");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(236, 236, 236)
-                        .addComponent(LabelDescricao7))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(287, 287, 287)
-                        .addComponent(bairroProcura, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(302, 302, 302)
-                        .addComponent(LabelCNPJ5)))
-                .addContainerGap(257, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelDescricao7)
-                .addGap(71, 71, 71)
-                .addComponent(LabelCNPJ5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bairroProcura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(386, Short.MAX_VALUE))
-        );
-
-        Aba_Cadastro.addTab("Buscar Postos", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -406,6 +451,25 @@ public class ViewPostos extends javax.swing.JFrame {
 
         controler.CadastroP(getCnpj_preco().getText(), dia.getSelectedIndex()+1,mes.getSelectedIndex()+1,getAno().getText(), (String) combustivel.getSelectedItem(), getPreco().getText());
     }//GEN-LAST:event_botaoPrecoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            // TODO add your handling code here:
+            controler.Mostra(bairroProcura.getText());
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(ViewPostos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            controler.Mostra2(CnpjProcura.getText());
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(ViewPostos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -492,6 +556,7 @@ public class ViewPostos extends javax.swing.JFrame {
     private javax.swing.JTabbedPane Aba_Cadastro;
     private javax.swing.JTextField Bandeira;
     private javax.swing.JButton BotaoCadastro;
+    private javax.swing.JTextField CnpjProcura;
     private javax.swing.JLabel LabelBairro;
     private javax.swing.JLabel LabelBairro1;
     private javax.swing.JLabel LabelBandeira;
@@ -502,6 +567,7 @@ public class ViewPostos extends javax.swing.JFrame {
     private javax.swing.JLabel LabelCNPJ3;
     private javax.swing.JLabel LabelCNPJ4;
     private javax.swing.JLabel LabelCNPJ5;
+    private javax.swing.JLabel LabelCNPJ6;
     private javax.swing.JLabel LabelDesc;
     private javax.swing.JLabel LabelDescricao5;
     private javax.swing.JLabel LabelDescricao6;
@@ -523,6 +589,8 @@ public class ViewPostos extends javax.swing.JFrame {
     private javax.swing.JComboBox combustivel;
     private javax.swing.JComboBox dia;
     private javax.swing.JTextField endereco;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox mes;
     private javax.swing.JTextField preco;

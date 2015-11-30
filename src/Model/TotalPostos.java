@@ -5,17 +5,26 @@
  */
 package Model;
 
+import java.awt.FlowLayout;
+import java.awt.MediaTracker;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 
 /**
  *
@@ -39,8 +48,78 @@ public class TotalPostos {
       return achou;
       }
     
-  
+    public JFrame GeraPainel (String cnpj) throws MalformedURLException {
+            Posto achou = null;
+            LeArquivo();
+            for (int i = 0; i < p.size(); i++) {
+            if (cnpj.equals(p.get(i).getCnpj())) {
+                JFrame frame = new JFrame(); 
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setSize(580, 580);
+                JPanel painel = new JPanel();
+                painel.setLayout(new FlowLayout()); 
+                achou = p.get(i);
+                
+                JLabel j = new JLabel();
+                j.setText("CNPJ: " + achou.getCnpj());
+                j.setFont(new java.awt.Font("Comic Sans MS", 1, 14));
+                painel.add(j);
+                JLabel j1 = new JLabel();
+                j1.setText("Razão Socia: " + achou.getRazao_social());
+                j1.setFont(new java.awt.Font("Comic Sans MS", 1, 14));
+                painel.add(j1);
+                JLabel j2 = new JLabel();
+                j2.setText("Nome Fantasia: " + achou.getNome_fantasia());
+                j2.setFont(new java.awt.Font("Comic Sans MS", 1, 14));
+                painel.add(j2);
+                JLabel j3 = new JLabel();
+                j3.setText("Bandeira: " + achou.getBandeira());
+                j3.setFont(new java.awt.Font("Comic Sans MS", 1, 14));
+                painel.add(j3);
+                JLabel j4 = new JLabel();
+                j4.setText("Endereço: " + achou.getEndereco());
+                j4.setFont(new java.awt.Font("Comic Sans MS", 1, 14));
+                painel.add(j4); 
+                JLabel j5 = new JLabel();
+                j5.setText("Bairro: " + achou.getBairro());
+                j5.setFont(new java.awt.Font("Comic Sans MS", 1, 14));
+                painel.add(j5);
+                JLabel j6 = new JLabel();
+                j6.setText("CEP: " + achou.getCep());
+                j6.setFont(new java.awt.Font("Comic Sans MS", 1, 14));
+                painel.add(j6);       
+                JLabel jLabel = new JLabel();
+                jLabel.setText("Imagem:  ");
+                jLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 14));
+                painel.add(jLabel);
+                JLabel lblImg = new JLabel(); 
+                URL urlImg = new URL(achou.getImagem());
+                ImageIcon imgIcon = new ImageIcon(urlImg);
+                while(imgIcon.getImageLoadStatus() == MediaTracker.LOADING); 
+                lblImg.setIcon(imgIcon);
+                painel.add(lblImg);
+                frame.getContentPane().add(painel);
+                frame.setVisible(true);
+                return frame;                 
+         }
+               }
+
+            return null;
+      }
+
     
+    
+    public String BuscaPostoBairro (String bairro) {
+      LeArquivo();
+      String achou = "";
+      for (int i = 0; i < p.size(); i++) {
+         if (bairro.equals(p.get(i).getBairro())) {
+            achou += p.get(i).toString() + '\n';
+            return achou;
+         }
+               }
+      return ("".equals(achou)) ? ("Não foram encontrados itens no estoque!") : (achou);
+      }
     
     
     public void SalvaArquivo (Posto posto){
@@ -79,8 +158,6 @@ public class TotalPostos {
             String cep = scanner.next();
             String aux = scanner.next();
             String bairro = aux.substring(0, aux.length() - 1);
-
-
                       
             int i = Integer.parseInt(cep);
             
@@ -96,6 +173,7 @@ public class TotalPostos {
             
             Add(posto);
         }
+        
     }
 }
 

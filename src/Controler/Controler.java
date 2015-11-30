@@ -6,6 +6,7 @@
 package Controler;
 
 import Model.OpControler;
+import java.net.MalformedURLException;
 
 
 
@@ -31,6 +32,12 @@ public class Controler {
         model.Cadastro_preco(cnpj, dia, mes, ano, combustivel, preco);
     }
     
+    public void Mostra (String bairro) throws MalformedURLException{
+        model.MostraPostoBairro(bairro);
+    }
     
+    public void Mostra2 (String cnpj) throws MalformedURLException{
+        model.MostraPosto(cnpj);
+    }
     
 }

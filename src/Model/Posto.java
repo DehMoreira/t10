@@ -86,11 +86,10 @@ public class Posto {
         this.imagem = imagem;
     }
     
-    //teste - dlt depois
 
     @Override
     public String toString() {
-        return "Posto{" + "cnpj=" + cnpj + ", razao_social=" + razao_social + ", nome_fantasia=" + nome_fantasia + ", bandeira=" + bandeira + ", imagem=" + imagem + ", endereco=" + endereco + ", bairro=" + bairro + ", cep=" + cep + '}';
+        return "Cnpj: " + cnpj + "Razao Social: " + razao_social + "Nome Fantasia: " + nome_fantasia + "Bandeira: " + bandeira + "Endereco: " + endereco + "Bairro: " + bairro + "Cep: " + cep;
     }
     
 
