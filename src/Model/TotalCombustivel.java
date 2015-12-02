@@ -12,7 +12,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -33,38 +32,17 @@ public class TotalCombustivel {
       c.add(comb);
     }
     
-    public Combustivel BuscaPostoCombustivel (String cnpj) {
+    public ArrayList<Combustivel> BuscaPostoCombustivel (String cnpj) {
       LeArquivo();
       Combustivel achou = null;
+      ArrayList<Combustivel> comb = new ArrayList();
       for (int i = 0; i < c.size(); i++) {
-          if (cnpj.equals(c.get(i).getPosto().getBairro()))
-               achou = c.get(i);}
-      return achou;
+          if (cnpj.equals(c.get(i).getPosto().getCnpj()))
+               achou = c.get(i);
+               comb.add(achou);}
+      return comb;
     }    
-    /**
-     *
-     * @param cnpj
-     * @return
-     */
-    public JTable GeraDados(String bairro){
-            ArrayList dados = new ArrayList(); 
-            String[] col = new String[] { "Posto","Combustivel", "Preço", "Data"  };
-            JPanel p = new JPanel();
-            p.setLayout(new FlowLayout());
-                
-            Combustivel comb = new Combustivel();   
-            comb = BuscaPostoCombustivel(bairro);
-            String s=Float.toString(comb.getPreco());
-            dados.add(new String[] {comb.getPosto().getCnpj(),comb.getTipo(), s, comb.getData_preco().toString()});
 
-            Table modelo = new Table(dados, col); 
-            JTable jtable = new JTable(modelo);  
-            jtable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);  
-            
-            p.add(jtable);
-
-            return(jtable);
-      }
     
     public void SalvaArquivo(Combustivel comb){
         File dir = new File(".");

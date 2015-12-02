@@ -40,4 +40,8 @@ public class Controler {
         model.MostraPosto(cnpj);
     }
     
+    public void Altera (String cnpj, String razao_social, String nome_fantasia, String bandeira, String imagem, String endereco, String bairro, String cep){
+        model.AlteraCadastro(cnpj, razao_social, nome_fantasia, bandeira, imagem, endereco, bairro, cep);
+    }
+    
 }

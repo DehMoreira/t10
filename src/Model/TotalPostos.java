@@ -35,8 +35,20 @@ public class TotalPostos {
         ArrayList<Posto> p = new ArrayList();
 
     public void Add(Posto posto) {
-      p.add(posto);
+         p.add(posto);
+
     }
+    
+    public void Altera(Posto posto) throws FileNotFoundException{
+         Posto aux = new Posto();
+         aux = BuscaPosto(posto.getCnpj());
+         p.remove(aux);
+         p.add(posto);
+         DltArq();
+         for (int i = 0; i < p.size(); i++){
+             SalvaArquivo(p.get(i));
+    
+    }}
       
     public Posto BuscaPosto (String cnpj) {
       Posto achou = null;
@@ -47,6 +59,7 @@ public class TotalPostos {
                }
       return achou;
       }
+    
     
     public JFrame GeraPainel (String cnpj) throws MalformedURLException {
             Posto achou = null;
@@ -109,17 +122,25 @@ public class TotalPostos {
 
     
     
-    public String BuscaPostoBairro (String bairro) {
-      LeArquivo();
-      String achou = "";
+    public Posto Aux (String bairro) {
+      Posto achou = null;
       for (int i = 0; i < p.size(); i++) {
          if (bairro.equals(p.get(i).getBairro())) {
-            achou += p.get(i).toString() + '\n';
-            return achou;
+            achou = p.get(i);
          }
                }
-      return ("".equals(achou)) ? ("Não foram encontrados itens no estoque!") : (achou);
+      return achou;
       }
+    
+    
+    public String MostraBairro(String bairro) {
+      String result = "";
+      for (int i = 0; i < p.size(); i++) {
+        if (bairro.equals(p.get(i).getBairro()))
+         result += p.get(i).toString() + '\n';
+      }
+      return ("".equals(result)) ? ("Não foram encontrados postos!") : (result);
+   }
     
     
     public void SalvaArquivo (Posto posto){
@@ -137,6 +158,18 @@ public class TotalPostos {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Posto cadastrado com sucesso");
         }
+    }
+    
+    public void DltArq () throws FileNotFoundException{
+            File file = new File( "postos.json" );  
+            file.delete();  
+        
+        
+       /* File dir = new File(".");
+        File arq = new File(dir, "postos.json");
+        
+        arq.delete();
+*/
     }
     
     public void LeArquivo() {

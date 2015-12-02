@@ -69,7 +69,6 @@ public class OpControler {
     
     public void MostraPosto(String cnpj) throws MalformedURLException {
            tp.LeArquivo();
-           //tc.LeArquivo();
         if(tp.BuscaPosto(cnpj)!= null){
 
            tp.GeraPainel(cnpj);
@@ -80,14 +79,36 @@ public class OpControler {
     
     public void MostraPostoBairro(String bairro) {
         tp.LeArquivo();
-        if(tp.BuscaPostoBairro(bairro)!= null){
-            JOptionPane.showMessageDialog(null, "Postos cadastrados no bairro: " + bairro + "\n" + tp.BuscaPostoBairro(bairro));
+        if(tp.Aux(bairro)!= null){
+            JOptionPane.showMessageDialog(null,"Posto(s) cadastrado(s) neste bairro: \n" + tp.MostraBairro(bairro));
         
         }
         else
                 JOptionPane.showMessageDialog(null, "Não há postos deste bairro cadastrados");
     }
+    
+    public void AlteraCadastro (String cnpj, String razao_social, String nome_fantasia, String bandeira, String imagem, String endereco, String bairro, String cep) {      
+                Posto aux = new Posto();
+                aux.setCnpj(cnpj);
+                tp.LeArquivo();
+                if(tp.BuscaPosto(aux.getCnpj()) != null){
+                    Posto p = new Posto();                   
+                    p.setCnpj(cnpj);
+                    p.setRazao_social(razao_social);
+                    p.setNome_fantasia(nome_fantasia);
+                    p.setBandeira(bandeira);
+                    p.setImagem(imagem);
+                    p.setEndereco(endereco);
+                    p.setBairro(bairro);
+                    int n = Integer.parseInt(cep);
+                    p.setCep(n); 
+                    tp.Altera(p);
+                    JOptionPane.showMessageDialog(null, "Alterado com sucesso");
+                }
+                else
+                    JOptionPane.showMessageDialog(null, "Posto nao cadastrado");
 
+    }
 }
        
     

@@ -89,8 +89,9 @@ public class Posto {
 
     @Override
     public String toString() {
-        return "Cnpj: " + cnpj + "Razao Social: " + razao_social + "Nome Fantasia: " + nome_fantasia + "Bandeira: " + bandeira + "Endereco: " + endereco + "Bairro: " + bairro + "Cep: " + cep;
+        return "Cnpj: " + cnpj + "   Razao Social: " + razao_social + "   Nome Fantasia: " + nome_fantasia + "   Bandeira: " + bandeira + "   Endereco: " + endereco + "   Bairro: " + bairro + "   Cep: " + cep;
     }
+
     
 
 }
