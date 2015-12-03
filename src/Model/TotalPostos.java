@@ -39,16 +39,6 @@ public class TotalPostos {
 
     }
     
-    public void Altera(Posto posto) throws FileNotFoundException{
-         Posto aux = new Posto();
-         aux = BuscaPosto(posto.getCnpj());
-         p.remove(aux);
-         p.add(posto);
-         DltArq();
-         for (int i = 0; i < p.size(); i++){
-             SalvaArquivo(p.get(i));
-    
-    }}
       
     public Posto BuscaPosto (String cnpj) {
       LeArquivo();
@@ -106,12 +96,12 @@ public class TotalPostos {
                 jLabel.setText("Imagem:  ");
                 jLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 14));
                 painel.add(jLabel);
-                /*JLabel lblImg = new JLabel(); 
+                JLabel lblImg = new JLabel(); 
                 URL urlImg = new URL(achou.getImagem());
                 ImageIcon imgIcon = new ImageIcon(urlImg);
                 while(imgIcon.getImageLoadStatus() == MediaTracker.LOADING); 
                 lblImg.setIcon(imgIcon);
-                painel.add(lblImg);*/
+                painel.add(lblImg);
                 frame.getContentPane().add(painel);
                 frame.setVisible(true);
                 return frame;                 
@@ -123,7 +113,7 @@ public class TotalPostos {
 
     
     
-    public Posto Aux (String bairro) {
+   public Posto Aux (String bairro) {
       Posto achou = null;
       for (int i = 0; i < p.size(); i++) {
          if (bairro.equals(p.get(i).getBairro())) {
@@ -159,18 +149,6 @@ public class TotalPostos {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Posto cadastrado com sucesso");
         }
-    }
-    
-    public void DltArq () throws FileNotFoundException{
-            File file = new File( "postos.json" );  
-            file.delete();  
-        
-        
-       /* File dir = new File(".");
-        File arq = new File(dir, "postos.json");
-        
-        arq.delete();
-*/
     }
     
     public void LeArquivo() {

@@ -68,26 +68,6 @@ public class ViewPostos extends javax.swing.JFrame {
         endereco = new javax.swing.JTextField();
         bairro = new javax.swing.JTextField();
         cep = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        LabelDesc1 = new javax.swing.JLabel();
-        cnpjAltera = new javax.swing.JTextField();
-        LabelDesc2 = new javax.swing.JLabel();
-        LabelRazaoSocial1 = new javax.swing.JLabel();
-        LabelNomeFantasia1 = new javax.swing.JLabel();
-        LabelBandeira1 = new javax.swing.JLabel();
-        LabelImagem1 = new javax.swing.JLabel();
-        LabelEndereco1 = new javax.swing.JLabel();
-        LabelBairro2 = new javax.swing.JLabel();
-        LabelBairro3 = new javax.swing.JLabel();
-        rsAltera = new javax.swing.JTextField();
-        nfAltera = new javax.swing.JTextField();
-        bAltera = new javax.swing.JTextField();
-        urlAltera = new javax.swing.JTextField();
-        endAltera = new javax.swing.JTextField();
-        bairroAltera = new javax.swing.JTextField();
-        cepAltera = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         LabelDescricao7 = new javax.swing.JLabel();
         LabelCNPJ5 = new javax.swing.JLabel();
@@ -212,7 +192,7 @@ public class ViewPostos extends javax.swing.JFrame {
                 .addComponent(preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botaoPreco)
-                .addGap(0, 176, Short.MAX_VALUE))
+                .addGap(0, 168, Short.MAX_VALUE))
         );
 
         Aba_Cadastro.addTab("Cadastro Preco", PainelPrecos);
@@ -356,149 +336,6 @@ public class ViewPostos extends javax.swing.JFrame {
 
         Aba_Cadastro.addTab("Cadastrar Posto", LabelCEP);
 
-        LabelDesc1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelDesc1.setForeground(new java.awt.Color(255, 153, 153));
-        LabelDesc1.setText("Informe o CNPJ do Posto");
-
-        LabelDesc2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelDesc2.setForeground(new java.awt.Color(255, 153, 153));
-        LabelDesc2.setText("Insira os novos dados:  OBS: preencha todos os campos");
-
-        LabelRazaoSocial1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelRazaoSocial1.setForeground(new java.awt.Color(255, 153, 153));
-        LabelRazaoSocial1.setText("Razão Social: ");
-
-        LabelNomeFantasia1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelNomeFantasia1.setForeground(new java.awt.Color(255, 153, 153));
-        LabelNomeFantasia1.setText("Nome Fantasia: ");
-
-        LabelBandeira1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelBandeira1.setForeground(new java.awt.Color(255, 153, 153));
-        LabelBandeira1.setText("Bandeira: ");
-
-        LabelImagem1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelImagem1.setForeground(new java.awt.Color(255, 153, 153));
-        LabelImagem1.setText("URL da Imagem do Posto: ");
-
-        LabelEndereco1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelEndereco1.setForeground(new java.awt.Color(255, 153, 153));
-        LabelEndereco1.setText("Endereço:");
-
-        LabelBairro2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelBairro2.setForeground(new java.awt.Color(255, 153, 153));
-        LabelBairro2.setText("Bairro:");
-
-        LabelBairro3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        LabelBairro3.setForeground(new java.awt.Color(255, 153, 153));
-        LabelBairro3.setText("CEP: ");
-
-        jButton3.setText("Alterar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Excluir Cadastro");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(LabelDesc2))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(109, 109, 109)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(LabelRazaoSocial1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(rsAltera))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(LabelNomeFantasia1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(nfAltera))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(LabelBandeira1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(bAltera))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(LabelImagem1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(urlAltera, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(LabelEndereco1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(endAltera))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(LabelBairro3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cepAltera))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(LabelBairro2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(bairroAltera)))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(258, 258, 258)
-                        .addComponent(jButton3))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(LabelDesc1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cnpjAltera, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(jButton4)))
-                .addContainerGap(100, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelDesc1)
-                    .addComponent(cnpjAltera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LabelDesc2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelRazaoSocial1)
-                    .addComponent(rsAltera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelNomeFantasia1)
-                    .addComponent(nfAltera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelBandeira1)
-                    .addComponent(bAltera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelImagem1)
-                    .addComponent(urlAltera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelEndereco1)
-                    .addComponent(endAltera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelBairro2)
-                    .addComponent(bairroAltera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelBairro3)
-                    .addComponent(cepAltera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addComponent(jButton3)
-                .addContainerGap(78, Short.MAX_VALUE))
-        );
-
-        Aba_Cadastro.addTab("Alterar Cadastro Posto", jPanel2);
-
         LabelDescricao7.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         LabelDescricao7.setForeground(new java.awt.Color(255, 153, 153));
         LabelDescricao7.setText("Buscar postos de um bairro:");
@@ -532,9 +369,6 @@ public class ViewPostos extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(jButton2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(254, 254, 254)
                         .addComponent(LabelCNPJ5))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -550,7 +384,10 @@ public class ViewPostos extends javax.swing.JFrame {
                             .addComponent(bairroProcura, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(184, 184, 184)
-                        .addComponent(LabelDescricao7)))
+                        .addComponent(LabelDescricao7))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(274, 274, 274)
+                        .addComponent(jButton2)))
                 .addContainerGap(205, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -568,9 +405,9 @@ public class ViewPostos extends javax.swing.JFrame {
                 .addComponent(LabelCNPJ6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CnpjProcura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         Aba_Cadastro.addTab("Buscar Postos", jPanel1);
@@ -579,43 +416,18 @@ public class ViewPostos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Aba_Cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Aba_Cadastro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Aba_Cadastro)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Aba_Cadastro)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cnpjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnpjActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cnpjActionPerformed
-
-    private void BotaoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastroActionPerformed
-        // TODO add your handling code here:
-        controler.Cadastro(getCnpj().getText(),getRazaosocial().getText(), getNomeFantasia().getText(),getBandeira().getText(),getURL().getText(),getEndereco().getText(),getBairro().getText(),getCep().getText());
-    }//GEN-LAST:event_BotaoCadastroActionPerformed
-
-    private void combustivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combustivelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_combustivelActionPerformed
-
-    private void precoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_precoActionPerformed
-
-    private void diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_diaActionPerformed
-
-    private void botaoPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPrecoActionPerformed
-        // TODO add your handling code here:
-        //String cnpj, String dia, String mes, String ano, String combustivel, String preco
-
-        controler.CadastroP(getCnpj_preco().getText(), dia.getSelectedIndex()+1,mes.getSelectedIndex()+1,getAno().getText(), (String) combustivel.getSelectedItem(), getPreco().getText());
-    }//GEN-LAST:event_botaoPrecoActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -636,10 +448,33 @@ public class ViewPostos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void cnpjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnpjActionPerformed
         // TODO add your handling code here:
-        controler.Altera(cnpjAltera.getText(), rsAltera.getText(), nfAltera.getText(), bAltera.getText(), urlAltera.getText(), endAltera.getText(), bairroAltera.getText(), cepAltera.getText());
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_cnpjActionPerformed
+
+    private void BotaoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastroActionPerformed
+        // TODO add your handling code here:
+        controler.Cadastro(getCnpj().getText(),getRazaosocial().getText(), getNomeFantasia().getText(),getBandeira().getText(),getURL().getText(),getEndereco().getText(),getBairro().getText(),getCep().getText());
+    }//GEN-LAST:event_BotaoCadastroActionPerformed
+
+    private void botaoPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPrecoActionPerformed
+        // TODO add your handling code here:
+        //String cnpj, String dia, String mes, String ano, String combustivel, String preco
+
+        controler.CadastroP(getCnpj_preco().getText(), dia.getSelectedIndex()+1,mes.getSelectedIndex()+1,getAno().getText(), (String) combustivel.getSelectedItem(), getPreco().getText());
+    }//GEN-LAST:event_botaoPrecoActionPerformed
+
+    private void diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_diaActionPerformed
+
+    private void precoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_precoActionPerformed
+
+    private void combustivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combustivelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combustivelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -729,10 +564,7 @@ public class ViewPostos extends javax.swing.JFrame {
     private javax.swing.JTextField CnpjProcura;
     private javax.swing.JLabel LabelBairro;
     private javax.swing.JLabel LabelBairro1;
-    private javax.swing.JLabel LabelBairro2;
-    private javax.swing.JLabel LabelBairro3;
     private javax.swing.JLabel LabelBandeira;
-    private javax.swing.JLabel LabelBandeira1;
     private javax.swing.JPanel LabelCEP;
     private javax.swing.JLabel LabelCNPJ;
     private javax.swing.JLabel LabelCNPJ1;
@@ -742,49 +574,32 @@ public class ViewPostos extends javax.swing.JFrame {
     private javax.swing.JLabel LabelCNPJ5;
     private javax.swing.JLabel LabelCNPJ6;
     private javax.swing.JLabel LabelDesc;
-    private javax.swing.JLabel LabelDesc1;
-    private javax.swing.JLabel LabelDesc2;
     private javax.swing.JLabel LabelDescricao5;
     private javax.swing.JLabel LabelDescricao6;
     private javax.swing.JLabel LabelDescricao7;
     private javax.swing.JLabel LabelEndereco;
-    private javax.swing.JLabel LabelEndereco1;
     private javax.swing.JLabel LabelImagem;
-    private javax.swing.JLabel LabelImagem1;
     private javax.swing.JLabel LabelNomeFantasia;
-    private javax.swing.JLabel LabelNomeFantasia1;
     private javax.swing.JLabel LabelRazaoSocial;
-    private javax.swing.JLabel LabelRazaoSocial1;
     private javax.swing.JTextField NomeFantasia;
     private javax.swing.JPanel PainelPrecos;
     private javax.swing.JTextField URL;
     private javax.swing.JTextField ano;
-    private javax.swing.JTextField bAltera;
     private javax.swing.JTextField bairro;
-    private javax.swing.JTextField bairroAltera;
     private javax.swing.JTextField bairroProcura;
     private javax.swing.JButton botaoPreco;
     private javax.swing.JTextField cep;
-    private javax.swing.JTextField cepAltera;
     private javax.swing.JTextField cnpj;
-    private javax.swing.JTextField cnpjAltera;
     private javax.swing.JTextField cnpj_preco;
     private javax.swing.JComboBox combustivel;
     private javax.swing.JComboBox dia;
-    private javax.swing.JTextField endAltera;
     private javax.swing.JTextField endereco;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JComboBox mes;
-    private javax.swing.JTextField nfAltera;
     private javax.swing.JTextField preco;
     private javax.swing.JTextField razaosocial;
-    private javax.swing.JTextField rsAltera;
-    private javax.swing.JTextField urlAltera;
     // End of variables declaration//GEN-END:variables
 }
 
