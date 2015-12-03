@@ -49,7 +49,7 @@ public class Combustivel {
 
     @Override
     public String toString() {
-        return "Combustivel{" + "posto=" + posto + ", tipo=" + tipo + ", data_preco=" + data_preco + ", preco=" + preco + '}';
+        return "Combustivel: " + tipo + "   Preço: " + preco + "   data: " + data_preco;                
     }
 
 

@@ -51,6 +51,7 @@ public class TotalPostos {
     }}
       
     public Posto BuscaPosto (String cnpj) {
+      LeArquivo();
       Posto achou = null;
       for (int i = 0; i < p.size(); i++) {
          if (cnpj.equals(p.get(i).getCnpj())) {
@@ -105,12 +106,12 @@ public class TotalPostos {
                 jLabel.setText("Imagem:  ");
                 jLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 14));
                 painel.add(jLabel);
-                JLabel lblImg = new JLabel(); 
+                /*JLabel lblImg = new JLabel(); 
                 URL urlImg = new URL(achou.getImagem());
                 ImageIcon imgIcon = new ImageIcon(urlImg);
                 while(imgIcon.getImageLoadStatus() == MediaTracker.LOADING); 
                 lblImg.setIcon(imgIcon);
-                painel.add(lblImg);
+                painel.add(lblImg);*/
                 frame.getContentPane().add(painel);
                 frame.setVisible(true);
                 return frame;                 

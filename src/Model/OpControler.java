@@ -68,10 +68,9 @@ public class OpControler {
     }
     
     public void MostraPosto(String cnpj) throws MalformedURLException {
-           tp.LeArquivo();
         if(tp.BuscaPosto(cnpj)!= null){
-
            tp.GeraPainel(cnpj);
+           JOptionPane.showMessageDialog(null,tc.MostraHistorico(cnpj));
         }
         else 
             JOptionPane.showMessageDialog(null, "CNPJ do posto não está cadastrado");
@@ -102,7 +101,7 @@ public class OpControler {
                     p.setBairro(bairro);
                     int n = Integer.parseInt(cep);
                     p.setCep(n); 
-                    tp.Altera(p);
+                    //tp.Altera(p);
                     JOptionPane.showMessageDialog(null, "Alterado com sucesso");
                 }
                 else

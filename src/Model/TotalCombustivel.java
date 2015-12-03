@@ -31,18 +31,17 @@ public class TotalCombustivel {
     public void Add(Combustivel comb) {
       c.add(comb);
     }
+ 
     
-    public ArrayList<Combustivel> BuscaPostoCombustivel (String cnpj) {
+   public String MostraHistorico(String cnpj) {
       LeArquivo();
-      Combustivel achou = null;
-      ArrayList<Combustivel> comb = new ArrayList();
+      String result = "";
       for (int i = 0; i < c.size(); i++) {
-          if (cnpj.equals(c.get(i).getPosto().getCnpj()))
-               achou = c.get(i);
-               comb.add(achou);}
-      return comb;
-    }    
-
+       if (cnpj.equals(c.get(i).getPosto().getCnpj()))
+         result += c.get(i).toString() + '\n';
+      }
+      return ("".equals(result)) ? ("Não foram encontrados historicos de preços!") : (result);
+   }
     
     public void SalvaArquivo(Combustivel comb){
         File dir = new File(".");
@@ -70,6 +69,7 @@ public class TotalCombustivel {
             Logger.getLogger(TotalCombustivel.class.getName()).log(Level.SEVERE, null, ex);
         }
         while (scanner.hasNext()) {
+
             String cnpjPosto = scanner.next();
             String dia = scanner.next();
             String mes = scanner.next();
@@ -81,8 +81,9 @@ public class TotalCombustivel {
             TotalPostos tp = new TotalPostos();
             Posto posto = new Posto();
             
+            tp.LeArquivo();
             posto=tp.BuscaPosto(cnpjPosto);
-            
+                       
             int d = Integer.parseInt(dia);
             int m = Integer.parseInt(mes);
             int a = Integer.parseInt(ano);
